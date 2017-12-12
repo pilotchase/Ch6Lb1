@@ -64,5 +64,10 @@ public class IntegerList{
         x[i] = x[minIndex];
         x[minIndex] = temp;
     }
+    
+    public void replaceFirst(int oldVal, int newVal)
+    {
+        
+    }
 }
 }
