@@ -11,7 +11,7 @@ public class IntegerList{
     //-------------------------------------------------------
     public IntegerList(int size)
     {
-	list = new int[size];
+    list = new int[size];
     }
 
 
@@ -20,8 +20,8 @@ public class IntegerList{
     //-------------------------------------------------------
     public void randomize()
     {
-	for (int i=0; i<list.length; i++)
-	    list[i] = (int)(Math.random() * 100) + 1;
+    for (int i=0; i<list.length; i++)
+        list[i] = (int)(Math.random() * 100) + 1;
     }
 
     //-------------------------------------------------------
@@ -29,8 +29,8 @@ public class IntegerList{
     //-------------------------------------------------------
     public void print()
     {
-	for (int i=0; i<list.length; i++)
-	    System.out.println(i + ":\t" + list[i]);
+    for (int i=0; i<list.length; i++)
+        System.out.println(i + ":\t" + list[i]);
     }
 
     //-------------------------------------------------------
@@ -39,22 +39,30 @@ public class IntegerList{
     //-------------------------------------------------------
     public int search(int target)
     {
-	return 0;
+        for(int i = 0; i<list.length; i++)
+        {
+           if(target == list[i])
+           {
+               return i;
+           }
+        }
     }
 
     //-------------------------------------------------------
     //sort the list into ascending order using the selection sort algorithm
     //-------------------------------------------------------
-    public void selectionSort()
+    public void selectionSort(int[] x)
     {
-	int minIndex;
-	for (int i=0; i < list.length-1; i++)
-	    {
-		//find smallest element in list starting at location i
-		
-
-		//swap list[i] with smallest element
-		
-	    }
+    for (int i = 0; i < x.length-1; i++) {
+        int minIndex = i;
+        for (int j = i+1; j < x.length; j++) {
+            if (x[minIndex] > x[j]) {
+                minIndex = j;
+            }
+        }
+        int temp = x[i];
+        x[i] = x[minIndex];
+        x[minIndex] = temp;
     }
+}
 }
